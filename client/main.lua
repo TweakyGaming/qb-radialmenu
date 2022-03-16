@@ -32,7 +32,7 @@ function setupSubItems()
             if not Config.MenuItems[6] then
                 Config.MenuItems[6] = {
                     id = 'jobinteractions',
-                    title = 'Work',
+                    title = 'Job',
                     icon = 'briefcase',
                     items = {}
                 }
@@ -77,96 +77,7 @@ function setupSubItems()
             Config.MenuItems[6] = nil
         end
     end
-
-    local Vehicle = GetVehiclePedIsIn(PlayerPedId())
-
-    if Vehicle ~= 0 then
-        local AmountOfSeats = GetVehicleModelNumberOfSeats(GetEntityModel(Vehicle))
-        if AmountOfSeats == 2 then
-            Config.MenuItems[3].items[3].items = {
-                [1] = {
-                    id = -1,
-                    title = Lang:t("options.driver_seat"),
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-                [2] = {
-                    id = 0,
-                    title = Lang:t("options.passenger_seat"),
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-            }
-        elseif AmountOfSeats == 3 then
-            Config.MenuItems[3].items[3].items = {
-                [4] = {
-                    id = -1,
-                    title = Lang:t("options.driver_seat"),
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-                [1] = {
-                    id = 0,
-                    title = Lang:t("options.passenger_seat"),
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-                [3] = {
-                    id = 1,
-                    title = Lang:t("options.other_seats"),
-                    icon = 'caret-down',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-            }
-        elseif AmountOfSeats == 4 then
-            Config.MenuItems[3].items[3].items = {
-                [4] = {
-                    id = -1,
-                    title = Lang:t("options.driver_seat"),
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-                [1] = {
-                    id = 0,
-                    title = Lang:t("options.passenger_seat"),
-                    icon = 'caret-up',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-                [3] = {
-                    id = 1,
-                    title = Lang:t("options.rear_left_seat"),
-                    icon = 'caret-down',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-                [2] = {
-                    id = 2,
-                    title = Lang:t("options.rear_right_seat"),
-                    icon = 'caret-down',
-                    type = 'client',
-                    event = 'qb-radialmenu:client:ChangeSeat',
-                    shouldClose = false,
-                },
-            }
-        end
-    end
 end
-
 function openRadial(bool)
     setupSubItems()
     SetNuiFocus(bool, bool)

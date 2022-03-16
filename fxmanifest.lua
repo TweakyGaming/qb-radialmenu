@@ -11,7 +11,7 @@ shared_scripts {
     'config.lua',
     'garageconfig.lua',
     '@qb-core/shared/locale.lua',
-    'locales/en.lua' -- Change this to your preferred language
+    'locales/de.lua' -- Change this to your preferred language
 }
 
 client_scripts {
@@ -24,6 +24,7 @@ client_scripts {
     'client/blips.lua',
     'client/benny.lua',
     'client/garages.lua',
+    'client/carcontrol.lua',
     'client/clothing.lua',
     'client/trunk.lua',
     'client/stretcher.lua'
