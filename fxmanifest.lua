@@ -24,7 +24,6 @@ client_scripts {
     'client/blips.lua',
     'client/benny.lua',
     'client/garages.lua',
-    'client/carcontrol.lua',
     'client/clothing.lua',
     'client/trunk.lua',
     'client/stretcher.lua'

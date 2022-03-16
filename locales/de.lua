@@ -29,7 +29,7 @@ local Translations = {
         someone_in_trunk = "Im Kofferraum ist kein Platz mehr."
     },
     success = {
-        vehicle_parked = "Fahrzeug geparkt,
+        vehicle_parked = "Fahrzeug geparkt,",
         extra_activated = "Extra %{extra} Aktiviert",
         entered_trunk = "Du bist im Kofferraum"
     },
